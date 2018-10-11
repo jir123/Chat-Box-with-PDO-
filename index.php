@@ -5,6 +5,7 @@
 ?>
 <?php
     $chat = new Chat();
+    
 ?>
     <div class="container">
         <div class="chat-box">
@@ -20,20 +21,35 @@
                 <?php }?>
             </ul>
         </div>
+
+
         <div class="chat-from">
-            <form action="">
-            <table>
-                <tr>
-                    <td><input type="text" name="name" placeholder="Your Name" required/></td>
-                </tr>
-                <tr>
-                    <td><input type="text" name="body" placeholder="Your Comment ... " required/></td>
-                </tr>
-                <tr>
-                    <td><input type="submit"  vlaue="Shout It"/></td>
-                </tr>
-            </table>
+            <?php
+                if(isset($_POST['submit'])){
+                    $name = $_POST['name'];
+                    $text = $_POST['text'];
+            
+                    $chat->setName($name);
+                    $chat->setText($text);
+                    $chat->insert();
+                    
+                }
+            ?>
+            <form action="" method="post">
+                <table>
+                    <tr>
+                        <td><input type="text" name="name" placeholder="Your Name" required/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" name="text" placeholder="Your Comment ... " required/></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" name="submit" vlaue="Shout It"/></td>
+                    </tr>
+                </table>
             </form>
         </div>
+
+
     </div>
 <?php include 'inc/footer.php'?>

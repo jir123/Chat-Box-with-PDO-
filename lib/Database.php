@@ -1,7 +1,7 @@
 <?php
 include 'config.php';
 
-class Datbase{
+class Database{
     private static $pdo;
     public function connection(){
         if(!isset(self::$pdo)){
