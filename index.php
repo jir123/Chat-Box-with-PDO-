@@ -1,21 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ChatBox</title>
-    <link rel="stylesheet" href="styles.css"> 
-</head>
-<body>
+
+<?php 
+    include 'inc/header.php';
+    include 'lib/Chat.php';
+?>
+<?php
+    $chat = new Chat();
+?>
     <div class="container">
         <div class="chat-box">
+            
             <ul>
-                <li><span class="time">11 Oct 2018</span><span class="name">Jahirul Islam Razu</span><span class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, unde.</span></li>
-                <li><span class="time">11 Oct 2018</span><span class="name">Jahirul Islam Razu</span><span class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, unde.</span></li>
-                <li><span class="time">11 Oct 2018</span><span class="name">Jahirul Islam Razu</span><span class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, unde.</span></li>
-                <li><span class="time">11 Oct 2018</span><span class="name">Jahirul Islam Razu</span><span class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, unde.</span></li>
-                <li><span class="time">11 Oct 2018</span><span class="name">Jahirul Islam Razu</span><span class="chat-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint, unde.</span></li>
+                <?php
+                    foreach($chat->readAll() as $value){
+
+                ?>
+                <li><span class="time"><?php echo $value['time'];?></span><span class="name"><?php echo $value['name'];?></span><span class="chat-text"><?php echo $value['text'];?></span></li>
+                
+
+                <?php }?>
             </ul>
         </div>
         <div class="chat-from">
@@ -34,5 +36,4 @@
             </form>
         </div>
     </div>
-</body>
-</html>
+<?php include 'inc/footer.php'?>
