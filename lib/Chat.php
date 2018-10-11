@@ -30,27 +30,5 @@
         }
 
 
-        // public function setId($roll){
-        //     $this->roll = $roll;
-        // }
-        //insert data
-        // public function insert(){
-        //     $sql = "INSERT INTO $this->table(name, email, dep, roll) VALUES (:name, :email, :dep, :roll)";
-        //     $stmt = DataBase::prepareOwn($sql);
-        //     $stmt->bindParam(':name',$this->name);
-        //     $stmt->bindParam(':email', $this->email);
-        //     $stmt->bindParam(':dep',$this->dep);   
-        //     $stmt->bindParam(':roll',$this->roll);
-        //     return $stmt->execute();
-        // }
-
-         //read data
-        //  public function readAll(){
-        //     $sql = "SELECT * FROM $this->table";
-        //     $stmt = DataBase::prepareOwn($sql);
-        //     $stmt->execute();
-        //     return $stmt->fetchAll();
-        // }
-
     }
 ?>
